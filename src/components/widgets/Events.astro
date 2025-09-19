@@ -1,0 +1,77 @@
+---
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  tagline?: string;
+  events?: Array<{
+    title: string;
+    description: string;
+    image: string;
+    date?: string;
+    location?: string;
+  }>;
+  id?: string;
+}
+
+const {
+  title = 'Our Recent Activities',
+  subtitle = 'We\'ve been laying the groundwork to empower local builders and spark fresh ideas, guided by our belief in Africa\'s rising tech momentum.',
+  tagline = 'Events',
+  events = [],
+  id,
+} = Astro.props;
+---
+
+<section class="py-16 md:py-20" {...id ? { id } : {}}>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center pb-10 md:pb-16">
+      {tagline && (
+        <p class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase">
+          {tagline}
+        </p>
+      )}
+      {title && (
+        <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200">
+          {title}
+        </h2>
+      )}
+      {subtitle && (
+        <p class="text-xl text-muted mb-6 dark:text-slate-300 max-w-3xl mx-auto">
+          {subtitle}
+        </p>
+      )}
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {events.map(({ title: eventTitle, description, image, date, location }) => (
+        <div class="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <div class="relative">
+            <img
+              src={image}
+              alt={eventTitle}
+              class="w-full h-48 object-cover"
+            />
+            {date && (
+              <div class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                {date}
+              </div>
+            )}
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+              {eventTitle}
+            </h3>
+            {location && (
+              <p class="text-sm text-muted dark:text-slate-400 mb-3">
+                📍 {location}
+              </p>
+            )}
+            <p class="text-gray-600 dark:text-slate-300">
+              {description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
