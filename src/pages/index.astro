@@ -6,6 +6,8 @@ import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
 import Partners from '~/components/widgets/Partners.astro';
 import Events from '~/components/widgets/Events.astro';
+import PizzaParty from '~/components/widgets/PizzaParty.astro';
+import EthiopiaResidency from '~/components/widgets/EthiopiaResidency.astro';
 import Team from '~/components/widgets/Team.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
@@ -155,25 +157,11 @@ const metadata = {
     tagline="Events"
     events={[
       {
-        title: 'Global Pizza Party 2025',
-        description: 'Held the first ever Pizza Party event in Kisumu, bringing together the local Web3 community for networking and collaboration.',
-        image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-        date: '2025',
-        location: 'Kisumu, Kenya'
-      },
-      {
         title: 'Base Batches Meetup',
         description: 'Base Batch: Africa 001 - A comprehensive program bringing together developers and entrepreneurs to learn about Base blockchain technology.',
         image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80',
         date: '2024',
         location: 'Kisumu, Kenya'
-      },
-      {
-        title: 'ETHiopia Residency and Popup City',
-        description: 'A cultural and technical exchange program bringing together Web3 developers from Ethiopia and Kenya for collaborative learning and innovation.',
-        image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-        date: '2024',
-        location: 'Addis Ababa, Ethiopia'
       },
       {
         title: 'Post Devcon Event',
@@ -182,6 +170,35 @@ const metadata = {
         date: '2024',
         location: 'Kisumu, Kenya'
       }
+    ]}
+  />
+
+  <!-- Pizza Party Widget ************ -->
+
+  <PizzaParty
+    title="Global Pizza Party 2025"
+    subtitle="Held the first ever Pizza Party event in Kisumu"
+    description="Bringing together the local Web3 community for networking and collaboration in a fun, engaging environment. This groundbreaking event marked a new chapter in Kisumu's Web3 journey."
+    videoSrc="~/assets/images/Pizza DAO Global Pizza Party 2025.mp4"
+    date="2025"
+    location="Kisumu, Kenya"
+  />
+
+  <!-- Ethiopia Residency Widget ***** -->
+
+  <EthiopiaResidency
+    title="ETHiopia Residency and Popup City"
+    subtitle="Cultural and Technical Exchange Program"
+    description="A groundbreaking cultural and technical exchange program bringing together Web3 developers from Ethiopia and Kenya for collaborative learning and innovation. This residency program fostered cross-border collaboration and knowledge sharing in the African Web3 ecosystem."
+    imageSrc="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+    date="2024"
+    location="Addis Ababa, Ethiopia"
+    highlights={[
+      'Cross-border collaboration between Ethiopia and Kenya',
+      'Technical knowledge exchange and skill sharing',
+      'Cultural immersion and community building',
+      'Innovation workshops and hackathons',
+      'Long-term partnership development'
     ]}
   />
 
